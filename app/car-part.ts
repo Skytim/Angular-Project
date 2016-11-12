@@ -4,4 +4,6 @@ export class carPart {
     description: string;
     inStock: number;
     price: number;
+    image: string;
+    featured: boolean;
 }
