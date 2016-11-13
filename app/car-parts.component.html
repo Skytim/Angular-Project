@@ -1,6 +1,6 @@
 <p>There are {{totalCarParts()}} total parts in Stock</p>
 <ul>
-    <li class="card" *ngFor="let carPart of carParts"[class.featured]="carPart.featured">
+    <li class="card" *ngFor="let carPart of carParts" [class.featured]="carPart.featured">
         <div class="panel-body">
             <div class="photo">
                 <img src="{{carPart.image}}">
@@ -14,9 +14,19 @@
                         <h2>{{carPart.name|uppercase}}</h2>
                         <p class="description">{{carPart.description}}</p>
                         <p class="price">{{carPart.price|currency:'EUR':true}}</p>
+
+
                         <p *ngIf="carPart.inStock >0 ">{{carPart.inStock}} in Stock</p>
                         <p *ngIf="carPart.inStock ==0 ">Out of Stock</p>
                     </td>
+                    <td>
+                        <div class="select-quantity">
+                            <button class="decrease" (click)="downQuantity(carPart)">-</button> {{carPart.quantity}}
+                            <button class="increase" (click)="upQuantity(carPart)">+</button>
+                        </div>
+                    </td>
+                    <!--<input type="text" (keydown)="showKey($event)"></input>-->
+                    <h2 (mouseover)="getCoord($event)">Hover me</h2>
                 </tr>
             </table>
         </div>

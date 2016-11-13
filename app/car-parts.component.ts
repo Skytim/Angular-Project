@@ -13,11 +13,29 @@ export class CarPartsComponent {
         this.carParts = CARPARTS;
 
     }
+    upQuantity(carPart) {
+
+        if (carPart.quantity < carPart.inStock)
+            carPart.quantity++;
+    }
+    downQuantity(carPart) {
+
+        if (carPart.quantity != 0)
+            carPart.quantity--;
+    }
     totalCarParts() {
         // let sum = 0;
         // for (let carPart of this.carParts) {
         //   sum += carPart.inStock;
         // }
         return this.carParts.reduce(function (prev, current) { return prev + current.inStock; }, 0)
+    }
+    showKey(event) {
+        alert(event.keyCode);
+
+    }
+    getCoord(event){
+
+        console.log(event.clientX+","+event.clientY);
     }
 }

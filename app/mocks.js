@@ -6,7 +6,8 @@ exports.CARPARTS = [{
         "inStock": 5,
         "price": 4.99,
         "image": "/images/tire.jpg",
-        "featured": false
+        "featured": false,
+        "quantity": 0
     }, {
         "id": 2,
         "name": "Reinforced Shocks",
@@ -14,7 +15,8 @@ exports.CARPARTS = [{
         "inStock": 0,
         "price": 9.99,
         "image": "/images/shocks.jpg",
-        "featured": true
+        "featured": true,
+        "quantity": 0
     }, {
         "id": 3,
         "name": "Reinforced Shocks",
@@ -22,7 +24,8 @@ exports.CARPARTS = [{
         "inStock": 100,
         "price": 12,
         "image": "/images/shocks.jpg",
-        "featured": true
+        "featured": true,
+        "quantity": 0
     }
 ];
 //# sourceMappingURL=mocks.js.map
