@@ -12,6 +12,8 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var car_parts_component_1 = require("./car-parts.component");
+var forms_1 = require("@angular/forms");
+var racing_data_service_1 = require("./racing-data.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,8 +21,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, car_parts_component_1.CarPartsComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+        declarations: [app_component_1.AppComponent, car_parts_component_1.CarPartsComponent, racing_data_service_1.RacingDataService],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

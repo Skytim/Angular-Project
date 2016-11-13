@@ -21,7 +21,9 @@
                     </td>
                     <td>
                         <div class="select-quantity">
-                            <button class="decrease" (click)="downQuantity(carPart)">-</button> {{carPart.quantity}}
+                            <button class="decrease" (click)="downQuantity(carPart)">-</button>
+
+                            <input class="number" type="text" [(ngModel)]="carPart.quantity" >
                             <button class="increase" (click)="upQuantity(carPart)">+</button>
                         </div>
                     </td>

@@ -8,21 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var mocks_1 = require("./mocks");
 var core_1 = require("@angular/core");
-var racing_data_service_1 = require("./racing-data.service");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Ultra Up!';
+var RacingDataService = (function () {
+    function RacingDataService() {
     }
-    return AppComponent;
+    RacingDataService.prototype.getCarParts = function () {
+        return mocks_1.CARPARTS;
+    };
+    return RacingDataService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "<h1>{{title}}</h1>\n  <car-parts></car-parts>",
-        providers: [racing_data_service_1.RacingDataService]
-    }),
+RacingDataService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], RacingDataService);
+exports.RacingDataService = RacingDataService;
+//# sourceMappingURL=racing-data.service.js.map

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { carPart } from './car-part';
-import { CARPARTS } from './mocks'
+import { RacingDataService } from './racing-data.service'
+
 @Component({
     selector: 'car-parts',
     templateUrl: 'app/car-parts.component.html',
@@ -9,10 +10,7 @@ import { CARPARTS } from './mocks'
 })
 export class CarPartsComponent {
     carParts: carPart[];
-    ngOnInit() {
-        this.carParts = CARPARTS;
 
-    }
     upQuantity(carPart) {
 
         if (carPart.quantity < carPart.inStock)
@@ -34,8 +32,14 @@ export class CarPartsComponent {
         alert(event.keyCode);
 
     }
-    getCoord(event){
+    getCoord(event) {
 
-        console.log(event.clientX+","+event.clientY);
+        console.log(event.clientX + "," + event.clientY);
+    }
+    constructor(private racingDataService: RacingDataService) { }
+    ngOnInit() {
+
+        this.carParts = this.racingDataService.getCarParts();
+
     }
 }

@@ -9,13 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var mocks_1 = require("./mocks");
+var racing_data_service_1 = require("./racing-data.service");
 var CarPartsComponent = (function () {
-    function CarPartsComponent() {
+    function CarPartsComponent(racingDataService) {
+        this.racingDataService = racingDataService;
     }
-    CarPartsComponent.prototype.ngOnInit = function () {
-        this.carParts = mocks_1.CARPARTS;
-    };
     CarPartsComponent.prototype.upQuantity = function (carPart) {
         if (carPart.quantity < carPart.inStock)
             carPart.quantity++;
@@ -37,6 +35,9 @@ var CarPartsComponent = (function () {
     CarPartsComponent.prototype.getCoord = function (event) {
         console.log(event.clientX + "," + event.clientY);
     };
+    CarPartsComponent.prototype.ngOnInit = function () {
+        this.carParts = this.racingDataService.getCarParts();
+    };
     return CarPartsComponent;
 }());
 CarPartsComponent = __decorate([
@@ -45,7 +46,7 @@ CarPartsComponent = __decorate([
         templateUrl: 'app/car-parts.component.html',
         styleUrls: ['app/car-parts.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [racing_data_service_1.RacingDataService])
 ], CarPartsComponent);
 exports.CarPartsComponent = CarPartsComponent;
 //# sourceMappingURL=car-parts.component.js.map
